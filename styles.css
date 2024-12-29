@@ -1,0 +1,87 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #0078D7, #00509E);
+    color: #fff;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero {
+    margin-top: 1rem;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 1rem auto;
+    display: block;
+  }
+  
+  section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    color: #00509E;
+  }
+  
+  .project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-img {
+    width: 150px;
+    height: 100px;
+    margin-right: 1rem;
+  }
+  
+  footer {
+    text-align: center;
+    background: #00509E;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  a {
+    color: #0078D7;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
