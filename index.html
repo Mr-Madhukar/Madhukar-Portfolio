@@ -1,72 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Madhukar Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhukar | Full Stack Developer & CSE Student</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Madhukar</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-    <div class="hero" id="home">
-      <img src="My-.jpg" alt="Madhukar" class="profile-pic" />
-      <h1>Madhukar</h1>
-      <p>Final-Year Diploma Student in Computer Engineering</p>
-    </div>
-  </header>
 
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>Aspiring to leverage my skills in programming, web development, and system administration to contribute effectively to the tech industry.</p>
-    <h3>Education</h3>
-    <ul>
-      <li><strong>Diploma in Computer Engineering:</strong> Government Polytechnic, Purnea (2022 – Present)</li>
-      <li><strong>ITI in Information Technology:</strong> State Council of Vocational Training, Bihar (2021)</li>
-    </ul>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Madhukar</span></h1>
+                <p class="hero-subtitle">Full Stack Developer | CSE Student | Tech Enthusiast</p>
+                <p class="hero-description">Building innovative and scalable software solutions with MERN Stack, Java, and Python. Currently exploring Cloud Computing & DevOps.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="My.jpg" alt="Madhukar" class="profile-img">
+            </div>
+        </div>
+    </section>
 
-  <section id="projects" data-aos="zoom-in">
-    <h2>Projects</h2>
-    <div class="project">
-      <img src="Frist.png" alt="Personal Portfolio Website" class="project-img">
-      <h3>Personal Portfolio Website</h3>
-      <p>Developed a responsive portfolio website to showcase projects, skills, and certifications.</p>
-      <a href="https://mr-madhukar.github.io/Madhukar-Portfolio/" target="_blank">View Project</a>
-    </div>
-    <div class="project">
-      <img src="Secend.png" alt="Go Trip Website" class="project-img">
-      <h3>Go Trip - Travel Booking Website</h3>
-      <p>Designed a responsive travel booking website with interactive features and animations.</p>
-      <a href="https://mr-madhukar.github.io/Project-Travel-Tourism/index.html" target="_blank">View Project</a>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a dedicated and detail-oriented Computer Science and Engineering student currently pursuing my B.Tech at Maharishi Markandeshwar Deemed to be University, Ambala. With a strong foundation from my Diploma in Computer Science Engineering, I'm passionate about building efficient, scalable, and user-centric software solutions.</p>
+                    <p>My interests span across full-stack development with the MERN stack, mastering Data Structures and Algorithms, and exploring modern technologies like Cloud Computing and DevOps. I have hands-on experience with JavaScript, React, Node.js, Express, MongoDB, and competitive programming platforms like LeetCode and HackerRank.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>B.Tech CSE</h3>
+                            <p>2025-2028</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Diploma CSE</h3>
+                            <p>2022-2025</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Topper</h3>
+                            <p>Class Rank 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact" data-aos="fade-right">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:mrmadhukarprofessional@gmail.com">mrmadhukarprofessional@gmail.com</a></p>
-    <p>Phone: 9473452441</p>
-    <p>
-      <a href="https://github.com/Mr-Madhukar" target="_blank">GitHub</a> |
-      <a href="http://www.linkedin.com/in/mr-madhukar" target="_blank">LinkedIn</a>
-    </p>
-  </section>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Front-End</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Back-End</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Core Concepts</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">DSA</span>
+                        <span class="skill-tag">DBMS</span>
+                        <span class="skill-tag">OS</span>
+                        <span class="skill-tag">Networking</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">AWS (Learning)</span>
+                        <span class="skill-tag">LeetCode</span>
+                        <span class="skill-tag">HackerRank</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Gemini Certified</span>
+                        <span class="skill-tag">Python Essentials</span>
+                        <span class="skill-tag">Java Programming</span>
+                        <span class="skill-tag">Smart Bihar Hackathon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2024 Madhukar | All Rights Reserved</p>
-  </footer>
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="education-content">
+                        <h3>Bachelor of Technology (B.Tech)</h3>
+                        <p class="education-school">Maharishi Markandeshwar Deemed to be University</p>
+                        <p class="education-degree">Computer Science & Engineering</p>
+                        <p class="education-date">July 2025 - July 2028</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-diploma"></i></div>
+                    <div class="education-content">
+                        <h3>Diploma in Computer Science & Engineering</h3>
+                        <p class="education-school">Government Polytechnic Purnea & SBTE Bihar</p>
+                        <p class="education-degree">SBTE, Bihar</p>
+                        <p class="education-date">2022 - 2025</p>
+                        <p class="education-highlight">🏆 Topper in CSE</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="education-content">
+                        <h3>ITI Information Technology</h3>
+                        <p class="education-school">Government Bihar ITI</p>
+                        <p class="education-degree">Information Technology</p>
+                        <p class="education-date">August 2019 - July 2021</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-book"></i></div>
+                    <div class="education-content">
+                        <h3>10th Standard</h3>
+                        <p class="education-school">Bihar School Examination Board</p>
+                        <p class="education-degree">BSEB</p>
+                        <p class="education-date">March 2018 - April 2019</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-code"></i></div>
+                    <h3>MERN Stack Web Application</h3>
+                    <p>Built a full-stack web application using MongoDB, Express, React, and Node.js with authentication and database management.</p>
+                    <div class="project-tech">React • Node.js • MongoDB • Express</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Responsive Web Design</h3>
+                    <p>Created responsive and modern web interfaces using HTML, CSS, and JavaScript with focus on user experience and performance.</p>
+                    <div class="project-tech">HTML • CSS • JavaScript • Responsive</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-database"></i></div>
+                    <h3>Data Structure Projects</h3>
+                    <p>Implemented various data structures and algorithms in Java and Python with focus on time and space complexity optimization.</p>
+                    <div class="project-tech">Java • Python • DSA • Algorithms</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Competitive Programming</h3>
+                    <p>Active on LeetCode and HackerRank, solving problems across multiple domains including arrays, strings, trees, and graphs.</p>
+                    <div class="project-tech">Problem Solving • Algorithms • Optimization</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Let's connect! Feel free to reach out for collaborations or inquiries.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919473452441">+91 9473452441</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:madhukar212005@gmail.com">madhukar212005@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Ambala, Haryana, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mr-madhukar" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Mr-Madhukar" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://leetcode.com" target="_blank" class="social-link">
+                        <i class="fas fa-code"></i> LeetCode
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Madhukar. All rights reserved. | Open to Internships & Collaborations</p>
+            <p>Aspiring Software Developer | Full Stack Developer | Tech Enthusiast</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
