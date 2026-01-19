@@ -31,7 +31,7 @@ To become a skilled Software Developer who contributes to innovative, reliable, 
 | **10th Standard** | Bihar School Examination Board | 2018-2019 | Completed |
 
 ### 🏆 Honors & Awards
-- 🥇 **Topper in CSE** - Class Rank 1 (Diploma)
+- 🥇 **Topper in CSE** - Class Rank 3 (Diploma)
 
 ---
 
