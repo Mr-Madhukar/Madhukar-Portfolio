@@ -1,69 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madhukar | Full Stack Developer & CSE Student</title>
+    <title>Madhukar-Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { inter: ['Inter', 'sans-serif'] },
+            colors: {
+              dark: { 900: '#050816', 800: '#0b1120', 700: '#111827', 600: '#1e293b' },
+              accent: { DEFAULT: '#06b6d4', light: '#22d3ee', dark: '#0891b2' },
+              neon: { purple: '#a855f7', blue: '#3b82f6', pink: '#ec4899' }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+              'slide-up': 'slideUp 0.6s ease-out forwards',
+              'fade-in': 'fadeIn 0.8s ease-out forwards',
+              'typing': 'typing 3.5s steps(30) infinite, blink 0.75s step-end infinite',
+            },
+            keyframes: {
+              float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+              glow: { from: { boxShadow: '0 0 20px rgba(6,182,212,0.3)' }, to: { boxShadow: '0 0 40px rgba(6,182,212,0.6)' } },
+              slideUp: { from: { opacity: '0', transform: 'translateY(40px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
+              fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
+              typing: { from: { width: '0' }, to: { width: '100%' } },
+              blink: { '50%': { borderColor: 'transparent' } }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Madhukar</a>
+<body class="font-inter bg-dark-900 text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="#home" class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                    &lt;Madhukar/&gt;
+                </a>
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="#home" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">Home</a></li>
+                    <li><a href="#about" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">About</a></li>
+                    <li><a href="#skills" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">Skills</a></li>
+                    <li><a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">Projects</a></li>
+                    <li><a href="#education" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">Education</a></li>
+                    <li><a href="#resume" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">Resume</a></li>
+                    <li><a href="#blog" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">Blog</a></li>
+                    <li><a href="#contact" class="nav-link text-slate-300 hover:text-cyan-400 transition-colors font-medium relative">Contact</a></li>
+                </ul>
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all duration-300 hover:scale-110" aria-label="Toggle theme">
+                        <i class="fas fa-moon text-cyan-400 theme-icon-dark"></i>
+                        <i class="fas fa-sun text-amber-400 theme-icon-light hidden"></i>
+                    </button>
+                    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+                    <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="hamburger-line block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                </button>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-dark-900/95 backdrop-blur-xl z-40 flex items-center justify-center transform translate-x-full transition-transform duration-500">
+            <ul class="flex flex-col items-center gap-8 text-2xl">
+                <li><a href="#home" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Home</a></li>
+                <li><a href="#about" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">About</a></li>
+                <li><a href="#skills" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Skills</a></li>
+                <li><a href="#projects" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Projects</a></li>
+                <li><a href="#education" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Education</a></li>
+                <li><a href="#resume" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Resume</a></li>
+                <li><a href="#blog" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Blog</a></li>
+                <li><a href="#contact" class="mobile-link text-slate-200 hover:text-cyan-400 transition-colors font-semibold">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Madhukar</span></h1>
-                <p class="hero-subtitle">Full Stack Developer | CSE Student | Tech Enthusiast</p>
-                <p class="hero-description">Building innovative and scalable software solutions with MERN Stack, Java, and Python. Currently exploring Cloud Computing & DevOps.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="hero-bg-orb absolute -top-40 -right-40 w-[500px] h-[500px] bg-gradient-to-br from-cyan-500/20 to-purple-500/10 rounded-full blur-3xl animate-float"></div>
+        <div class="hero-bg-orb absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-gradient-to-tr from-blue-500/15 to-pink-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="order-2 lg:order-1 text-center lg:text-left">
+                    <p class="text-cyan-400 text-sm md:text-base font-semibold tracking-widest uppercase mb-4 reveal-el">Welcome to my portfolio</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6 reveal-el">
+                        Hi, I'm<br>
+                        <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">Madhukar</span>
+                    </h1>
+                    <div class="h-8 md:h-10 mb-6 reveal-el">
+                        <span id="typed-text" class="text-lg md:text-2xl text-slate-300 font-light"></span>
+                        <span class="typing-cursor text-cyan-400 text-lg md:text-2xl">|</span>
+                    </div>
+                    <p class="text-slate-400 text-base md:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed reveal-el">
+                        Building innovative and scalable software solutions with MERN Stack, Java, and Python. Currently exploring Cloud Computing & DevOps.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start reveal-el">
+                        <a href="#contact" class="group relative px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:-translate-y-1 transition-all duration-300 text-center">
+                            Get In Touch <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#projects" class="px-8 py-3.5 border-2 border-cyan-500/50 rounded-full font-semibold text-cyan-400 hover:bg-cyan-500/10 hover:-translate-y-1 transition-all duration-300 text-center">
+                            View My Work
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="My-.jpg" alt="Madhukar" class="profile-img">
+                <div class="order-1 lg:order-2 flex justify-center reveal-el">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full blur-2xl opacity-30 animate-glow"></div>
+                        <img src="My-.jpg" alt="Madhukar" class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-cyan-400/40 shadow-2xl shadow-cyan-500/20">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a dedicated and detail-oriented Computer Science and Engineering student currently pursuing my B.Tech at Maharishi Markandeshwar Deemed to be University, Ambala. With a strong foundation from my Diploma in Computer Science Engineering, I'm passionate about building efficient, scalable, and user-centric software solutions.</p>
-                    <p>My interests span across full-stack development with the MERN stack, mastering Data Structures and Algorithms, and exploring modern technologies like Cloud Computing and DevOps. I have hands-on experience with JavaScript, React, Node.js, Express, MongoDB, and competitive programming platforms like LeetCode and HackerRank.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>B.Tech CSE</h3>
-                            <p>2025-2028</p>
-                        </div>
-                        <div class="stat">
-                            <h3>Diploma CSE</h3>
-                            <p>2022-2025</p>
-                        </div>
-                        <div class="stat">
-                            <h3>Topper</h3>
-                            <p>Class Rank 3</p>
-                        </div>
+    <section id="about" class="py-20 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-el">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-3">Get To Know Me</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">About <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Me</span></h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+                <div class="lg:col-span-3 reveal-el">
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-6">
+                        I'm a dedicated and detail-oriented Computer Science and Engineering student currently pursuing my B.Tech at Maharishi Markandeshwar Deemed to be University, Ambala. With a strong foundation from my Diploma in Computer Science Engineering, I'm passionate about building efficient, scalable, and user-centric software solutions.
+                    </p>
+                    <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+                        My interests span across full-stack development with the MERN stack, mastering Data Structures and Algorithms, and exploring modern technologies like Cloud Computing and DevOps. I have hands-on experience with JavaScript, React, Node.js, Express, MongoDB, and competitive programming platforms like LeetCode and HackerRank.
+                    </p>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 reveal-el">
+                    <div class="glass-card p-6 rounded-2xl text-center hover:-translate-y-2 transition-all duration-300 group">
+                        <h3 class="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-1">B.Tech</h3>
+                        <p class="text-slate-400 text-sm">CSE • 2025-2028</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center hover:-translate-y-2 transition-all duration-300 group">
+                        <h3 class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent mb-1">Diploma</h3>
+                        <p class="text-slate-400 text-sm">CSE • 2022-2025</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl text-center hover:-translate-y-2 transition-all duration-300 group">
+                        <h3 class="text-3xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent mb-1">🏆 Topper</h3>
+                        <p class="text-slate-400 text-sm">Class Rank 3</p>
                     </div>
                 </div>
             </div>
@@ -71,108 +159,91 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Front-End</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Responsive Design</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Back-End</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">REST APIs</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Core Concepts</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">DSA</span>
-                        <span class="skill-tag">DBMS</span>
-                        <span class="skill-tag">OS</span>
-                        <span class="skill-tag">Networking</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git/GitHub</span>
-                        <span class="skill-tag">AWS (Learning)</span>
-                        <span class="skill-tag">LeetCode</span>
-                        <span class="skill-tag">HackerRank</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Certifications</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Gemini Certified</span>
-                        <span class="skill-tag">Python Essentials</span>
-                        <span class="skill-tag">Java Programming</span>
-                        <span class="skill-tag">Smart Bihar Hackathon</span>
-                    </div>
-                </div>
+    <section id="skills" class="py-20 md:py-32 relative bg-dark-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-el">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-3">What I Work With</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Technical <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Skills</span></h2>
             </div>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-el">
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-cyan-500/30">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-code text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-cyan-500/10 text-cyan-300 rounded-full text-xs font-medium border border-cyan-500/20">Java</span>
+                        <span class="px-3 py-1.5 bg-cyan-500/10 text-cyan-300 rounded-full text-xs font-medium border border-cyan-500/20">Python</span>
+                        <span class="px-3 py-1.5 bg-cyan-500/10 text-cyan-300 rounded-full text-xs font-medium border border-cyan-500/20">JavaScript</span>
+                        <span class="px-3 py-1.5 bg-cyan-500/10 text-cyan-300 rounded-full text-xs font-medium border border-cyan-500/20">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-purple-500/30">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-palette text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Front-End</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-purple-500/10 text-purple-300 rounded-full text-xs font-medium border border-purple-500/20">React</span>
+                        <span class="px-3 py-1.5 bg-purple-500/10 text-purple-300 rounded-full text-xs font-medium border border-purple-500/20">JavaScript</span>
+                        <span class="px-3 py-1.5 bg-purple-500/10 text-purple-300 rounded-full text-xs font-medium border border-purple-500/20">CSS3</span>
+                        <span class="px-3 py-1.5 bg-purple-500/10 text-purple-300 rounded-full text-xs font-medium border border-purple-500/20">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-green-500/30">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-server text-green-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Back-End</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-green-500/10 text-green-300 rounded-full text-xs font-medium border border-green-500/20">Node.js</span>
+                        <span class="px-3 py-1.5 bg-green-500/10 text-green-300 rounded-full text-xs font-medium border border-green-500/20">Express.js</span>
+                        <span class="px-3 py-1.5 bg-green-500/10 text-green-300 rounded-full text-xs font-medium border border-green-500/20">MongoDB</span>
+                        <span class="px-3 py-1.5 bg-green-500/10 text-green-300 rounded-full text-xs font-medium border border-green-500/20">REST APIs</span>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-amber-500/30">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-amber-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Core Concepts</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-amber-500/10 text-amber-300 rounded-full text-xs font-medium border border-amber-500/20">DSA</span>
+                        <span class="px-3 py-1.5 bg-amber-500/10 text-amber-300 rounded-full text-xs font-medium border border-amber-500/20">DBMS</span>
+                        <span class="px-3 py-1.5 bg-amber-500/10 text-amber-300 rounded-full text-xs font-medium border border-amber-500/20">OS</span>
+                        <span class="px-3 py-1.5 bg-amber-500/10 text-amber-300 rounded-full text-xs font-medium border border-amber-500/20">Networking</span>
+                        <span class="px-3 py-1.5 bg-amber-500/10 text-amber-300 rounded-full text-xs font-medium border border-amber-500/20">Agile</span>
 
-    <!-- Education Section -->
-    <section class="education" id="education">
-        <div class="container">
-            <h2 class="section-title">Education & Certifications</h2>
-            <div class="education-timeline">
-                <div class="education-item">
-                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="education-content">
-                        <h3>Bachelor of Technology (B.Tech)</h3>
-                        <p class="education-school">Maharishi Markandeshwar Deemed to be University</p>
-                        <p class="education-degree">Computer Science & Engineering</p>
-                        <p class="education-date">July 2025 - July 2028</p>
                     </div>
                 </div>
-                <div class="education-item">
-                    <div class="education-icon"><i class="fas fa-diploma"></i></div>
-                    <div class="education-content">
-                        <h3>Diploma in Computer Science & Engineering</h3>
-                        <p class="education-school">Government Polytechnic Purnea & SBTE Bihar</p>
-                        <p class="education-degree">SBTE, Bihar</p>
-                        <p class="education-date">2022 - 2025</p>
-                        <p class="education-highlight">🏆 Topper in CSE</p>
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-blue-500/30">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-wrench text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Tools & Platforms</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-medium border border-blue-500/20">Git/GitHub</span>
+                        <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-medium border border-blue-500/20">AWS</span>
+                        <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-medium border border-blue-500/20">Docker</span>
+                        <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-medium border border-blue-500/20">Postman</span>
+                        <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-medium border border-blue-500/20">Jira</span>
+                        <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-xs font-medium border border-blue-500/20">Linux</span>
                     </div>
                 </div>
-                <div class="education-item">
-                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
-                    <div class="education-content">
-                        <h3>ITI Information Technology</h3>
-                        <p class="education-school">Government Bihar ITI</p>
-                        <p class="education-degree">Information Technology</p>
-                        <p class="education-date">August 2019 - July 2021</p>
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300 group border border-white/5 hover:border-rose-500/30">
+                    <div class="w-12 h-12 bg-gradient-to-br from-rose-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-award text-rose-400 text-xl"></i>
                     </div>
-                </div>
-                <div class="education-item">
-                    <div class="education-icon"><i class="fas fa-book"></i></div>
-                    <div class="education-content">
-                        <h3>10th Standard</h3>
-                        <p class="education-school">Bihar School Examination Board</p>
-                        <p class="education-degree">BSEB</p>
-                        <p class="education-date">March 2018 - April 2019</p>
+                    <h3 class="text-lg font-bold text-white mb-3">Certifications</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://pwskills.com/learn/certificate/a675933a-d071-4c20-b1a7-ad6268c0f0f5/" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Generative AI for All — PW Skills</a>
+                        <a href="https://sforce.co/verifycerts" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Agentforce Specialist — Salesforce</a>
+                        <a href="https://certificate.hack2skill.com/user/genai2devops/2025H2S10GENAI-DE00355" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Gen AI Academy 2.0 — Google Cloud</a>
+                        <a href="https://edu.google.accredible.com/4481dc45-f320-4f57-aff8-4bd7b14a5be6" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Gemini Certified — Google</a>
+                        <a href="https://d3uam8jk4sa4y4.cloudfront.net/static/certificates/graph_camp/madhukar.png" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Graphs Camp — AlgoUniversity</a>
+                        <a href="https://www.linkedin.com/in/mr-madhukar/details/certifications/" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Smart Bihar Hackathon — IIT Patna</a>
+                        <a href="https://www.linkedin.com/in/mr-madhukar/details/certifications/" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Java — IIT Bombay</a>
+                        <a href="https://www.pythoninstitute.org" target="_blank" class="px-3 py-1.5 bg-rose-500/10 text-rose-300 rounded-full text-xs font-medium border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-400/40 transition-all cursor-pointer no-underline">Python Essentials — OpenEDG</a>
                     </div>
                 </div>
             </div>
@@ -180,95 +251,291 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-code"></i></div>
-                    <h3>MERN Stack Web Application</h3>
-                    <p>Built a full-stack web application using MongoDB, Express, React, and Node.js with authentication and database management.</p>
-                    <div class="project-tech">React • Node.js • MongoDB • Express</div>
+    <section id="projects" class="py-20 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-el">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-3">My Recent Work</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Featured <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Projects</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-el">
+                <!-- Project 1: Go Trip -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-cyan-500/30">
+                    <div class="relative overflow-hidden h-48 sm:h-56">
+                        <img src="Gotrip.png" alt="Go Trip - Travel & Tourism" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+                            <a href="https://gotripagil.netlify.app/" target="_blank" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-semibold text-white hover:bg-cyan-600 transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Mr-Madhukar/Agil-Project" target="_blank" class="px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Go Trip — Travel & Tourism</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Interactive travel and tourism booking platform with destination search, user authentication, booking management, and responsive design.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-cyan-500/10 text-cyan-300 rounded-md text-xs font-medium">HTML5</span>
+                            <span class="px-2.5 py-1 bg-cyan-500/10 text-cyan-300 rounded-md text-xs font-medium">CSS3</span>
+                            <span class="px-2.5 py-1 bg-cyan-500/10 text-cyan-300 rounded-md text-xs font-medium">JavaScript</span>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-laptop"></i></div>
-                    <h3>Responsive Web Design</h3>
-                    <p>Created responsive and modern web interfaces using HTML, CSS, and JavaScript with focus on user experience and performance.</p>
-                    <div class="project-tech">HTML • CSS • JavaScript • Responsive</div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-database"></i></div>
-                    <h3>Data Structure Projects</h3>
-                    <p>Implemented various data structures and algorithms in Java and Python with focus on time and space complexity optimization.</p>
-                    <div class="project-tech">Java • Python • DSA • Algorithms</div>
+                <!-- Project 2: Mintlify Clone -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-purple-500/30">
+                    <div class="relative overflow-hidden h-48 sm:h-56">
+                        <img src="mintilify.png" alt="Mintlify Documentation Clone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+                            <a href="https://mintlifyc.netlify.app/" target="_blank" class="px-4 py-2 bg-purple-500 rounded-full text-sm font-semibold text-white hover:bg-purple-600 transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Mr-Madhukar/Mintlify" target="_blank" class="px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Mintlify — Documentation Clone</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Pixel-perfect clone of Mintlify documentation website with semantic structure, flexbox & grid layouts, and no external libraries.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 rounded-md text-xs font-medium">HTML5</span>
+                            <span class="px-2.5 py-1 bg-purple-500/10 text-purple-300 rounded-md text-xs font-medium">CSS3</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-flask"></i></div>
-                    <h3>Competitive Programming</h3>
-                    <p>Active on LeetCode and HackerRank, solving problems across multiple domains including arrays, strings, trees, and graphs.</p>
-                    <div class="project-tech">Problem Solving • Algorithms • Optimization</div>
+                <!-- Project 3: Cursor Landing Page -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-emerald-500/30">
+                    <div class="relative overflow-hidden h-48 sm:h-56">
+                        <img src="Cursor.png" alt="Cursor Landing Page Clone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+                            <a href="https://mr-madhukar.github.io/coursor/" target="_blank" class="px-4 py-2 bg-emerald-500 rounded-full text-sm font-semibold text-white hover:bg-emerald-600 transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Mr-Madhukar/coursor" target="_blank" class="px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Cursor — Landing Page Clone</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Recreated Cursor IDE landing page with hero, features, pricing, testimonials, FAQ, and footer using pure HTML & CSS.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 rounded-md text-xs font-medium">HTML5</span>
+                            <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 rounded-md text-xs font-medium">CSS3</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-subtitle">Let's connect! Feel free to reach out for collaborations or inquiries.</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p><a href="tel:+919473452441">+91 9473452441</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p><a href="mailto:madhukar212005@gmail.com">madhukar212005@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Ambala, Haryana, India</p>
+    <!-- Education Section -->
+    <section id="education" class="py-20 md:py-32 relative bg-dark-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-el">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-3">My Journey</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Education & <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Timeline</span></h2>
+            </div>
+            <div class="relative max-w-3xl mx-auto">
+                <div class="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-purple-500 to-blue-500"></div>
+                <!-- Item 1 -->
+                <div class="relative flex flex-col md:flex-row items-start mb-12 reveal-el">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-dark-900 z-10 shadow-lg shadow-cyan-500/50"></div>
+                    <div class="ml-12 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all duration-300">
+                            <span class="text-cyan-400 text-sm font-semibold">July 2025 — July 2028</span>
+                            <h3 class="text-lg font-bold text-white mt-1">B.Tech — Computer Science & Engineering</h3>
+                            <p class="text-slate-400 text-sm mt-1">Maharishi Markandeshwar Deemed to be University, Ambala</p>
+                            <span class="inline-block mt-2 px-3 py-1 bg-cyan-500/10 text-cyan-300 rounded-full text-xs font-medium">Pursuing</span>
                         </div>
                     </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/mr-madhukar" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
+                <!-- Item 2 -->
+                <div class="relative flex flex-col md:flex-row-reverse items-start mb-12 reveal-el">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-purple-400 rounded-full border-4 border-dark-900 z-10 shadow-lg shadow-purple-500/50"></div>
+                    <div class="ml-12 md:ml-0 md:w-1/2 md:pl-12">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all duration-300">
+                            <span class="text-purple-400 text-sm font-semibold">2022 — 2025</span>
+                            <h3 class="text-lg font-bold text-white mt-1">Diploma in CSE</h3>
+                            <p class="text-slate-400 text-sm mt-1">Government Polytechnic Purnea, SBTE Bihar</p>
+                            <span class="inline-block mt-2 px-3 py-1 bg-amber-500/10 text-amber-300 rounded-full text-xs font-medium">🏆 Topper — Rank 3</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="relative flex flex-col md:flex-row items-start mb-12 reveal-el">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full border-4 border-dark-900 z-10 shadow-lg shadow-blue-500/50"></div>
+                    <div class="ml-12 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-blue-500/30 transition-all duration-300">
+                            <span class="text-blue-400 text-sm font-semibold">Aug 2019 — July 2021</span>
+                            <h3 class="text-lg font-bold text-white mt-1">ITI — Information Technology</h3>
+                            <p class="text-slate-400 text-sm mt-1">Government Bihar ITI</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="relative flex flex-col md:flex-row-reverse items-start reveal-el">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-pink-400 rounded-full border-4 border-dark-900 z-10 shadow-lg shadow-pink-500/50"></div>
+                    <div class="ml-12 md:ml-0 md:w-1/2 md:pl-12">
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-pink-500/30 transition-all duration-300">
+                            <span class="text-pink-400 text-sm font-semibold">March 2018 — April 2019</span>
+                            <h3 class="text-lg font-bold text-white mt-1">10th Standard</h3>
+                            <p class="text-slate-400 text-sm mt-1">Bihar School Examination Board (BSEB)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 md:py-32 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-12 reveal-el">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-3">My Resume</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Download My <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Resume</span></h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Get a comprehensive overview of my skills, experience, education, and achievements in my resume.</p>
+            </div>
+            <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/5 reveal-el">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-4xl text-cyan-400"></i>
+                    </div>
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-xl font-bold text-white mb-1">Madhukar — Resume</h3>
+                        <p class="text-slate-400 text-sm">Full Stack Developer</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                    <a href="resume.pdf" download="resume.pdf" class="px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold text-white shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-download"></i> Download Resume
                     </a>
-                    <a href="https://github.com/Mr-Madhukar" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i> GitHub
+                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 border-2 border-cyan-500/50 rounded-full font-semibold text-cyan-400 hover:bg-cyan-500/10 hover:-translate-y-1 transition-all duration-300 inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-eye"></i> View Online
                     </a>
-                    <a href="https://twitter.com" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i> Twitter
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 md:py-32 relative bg-dark-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-el">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-3">My Articles</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Latest <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Blog Posts</span></h2>
+                <p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">I write about web development, DSA, and my journey as a developer on Hashnode.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-el">
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-cyan-500/30">
+                    <div class="h-40 bg-gradient-to-br from-cyan-600/30 to-blue-600/30 flex items-center justify-center">
+                        <i class="fab fa-hashnode text-5xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-cyan-400 text-xs font-semibold uppercase tracking-wider">HTML & CSS</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-2">Emmet for HTML: Writing Faster Markup</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">A beginner's guide to Emmet — the tool that helps you write HTML and CSS much faster with shorthand abbreviations.</p>
+                        <a href="https://css-selectors-chai-code.hashnode.dev/css-selectors-101-targeting-elements-with-precision" target="_blank" class="inline-flex items-center gap-1 text-cyan-400 text-sm font-semibold mt-4 hover:text-cyan-300 transition-colors">
+                            Read More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-purple-500/30">
+                    <div class="h-40 bg-gradient-to-br from-purple-600/30 to-pink-600/30 flex items-center justify-center">
+                        <i class="fab fa-hashnode text-5xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-purple-400 text-xs font-semibold uppercase tracking-wider">CSS</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-2">CSS Selectors 101: Targeting Elements</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Learn how CSS selectors work — from basic to advanced — so you can precisely target and style any HTML element.</p>
+                        <a href="https://css-selectors-chai-code.hashnode.dev/css-selectors-101-targeting-elements-with-precision" target="_blank" class="inline-flex items-center gap-1 text-purple-400 text-sm font-semibold mt-4 hover:text-purple-300 transition-colors">
+                            Read More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 border border-white/5 hover:border-emerald-500/30">
+                    <div class="h-40 bg-gradient-to-br from-emerald-600/30 to-green-600/30 flex items-center justify-center">
+                        <i class="fab fa-hashnode text-5xl text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-emerald-400 text-xs font-semibold uppercase tracking-wider">Networking</span>
+                        <h3 class="text-lg font-bold text-white mt-2 mb-2">How a Browser Works: Internals Guide</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">A beginner-friendly deep dive into browser internals — how it downloads, parses, and renders web pages.</p>
+                        <a href="https://your-browser.hashnode.dev/how-a-browser-works-a-beginner-friendly-guide-to-browser-internals" target="_blank" class="inline-flex items-center gap-1 text-emerald-400 text-sm font-semibold mt-4 hover:text-emerald-300 transition-colors">
+                            Read More <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 reveal-el">
+                <a href="https://hashnode.com/@mrmadhukar" target="_blank" class="px-8 py-3.5 border-2 border-cyan-500/50 rounded-full font-semibold text-cyan-400 hover:bg-cyan-500/10 hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
+                    <i class="fab fa-hashnode"></i> View All Posts on Hashnode
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal-el">
+                <p class="text-cyan-400 font-semibold tracking-widest uppercase text-sm mb-3">Let's Connect</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Get In <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Touch</span></h2>
+                <p class="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">Feel free to reach out for collaborations, internships, or just a friendly chat!</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="space-y-6 reveal-el">
+                    <a href="mailto:madhukar212005@gmail.com" class="glass-card p-6 rounded-2xl flex items-center gap-5 border border-white/5 hover:border-purple-500/30 transition-all duration-300 group block">
+                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-envelope text-xl text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold">Email</h3>
+                            <p class="text-slate-400 text-sm">madhukar212005@gmail.com</p>
+                        </div>
                     </a>
-                    <a href="https://leetcode.com" target="_blank" class="social-link">
-                        <i class="fas fa-code"></i> LeetCode
-                    </a>
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-5 border border-white/5">
+                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-xl text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold">Location</h3>
+                            <p class="text-slate-400 text-sm">Ambala, Haryana, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-el">
+                    <div class="glass-card p-8 rounded-2xl border border-white/5 h-full flex flex-col items-center justify-center gap-6">
+                        <h3 class="text-xl font-bold text-white">Connect With Me</h3>
+                        <div class="grid grid-cols-2 gap-4 w-full max-w-xs">
+                            <a href="https://www.linkedin.com/in/mr-madhukar" target="_blank" class="flex items-center justify-center gap-2 p-4 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600/20 hover:-translate-y-1 transition-all duration-300 font-semibold text-sm">
+                                <i class="fab fa-linkedin text-lg"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/Mr-Madhukar" target="_blank" class="flex items-center justify-center gap-2 p-4 rounded-xl bg-slate-600/10 border border-slate-500/20 text-slate-300 hover:bg-slate-600/20 hover:-translate-y-1 transition-all duration-300 font-semibold text-sm">
+                                <i class="fab fa-github text-lg"></i> GitHub
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="flex items-center justify-center gap-2 p-4 rounded-xl bg-sky-600/10 border border-sky-500/20 text-sky-400 hover:bg-sky-600/20 hover:-translate-y-1 transition-all duration-300 font-semibold text-sm">
+                                <i class="fab fa-twitter text-lg"></i> Twitter
+                            </a>
+                            <a href="https://leetcode.com" target="_blank" class="flex items-center justify-center gap-2 p-4 rounded-xl bg-amber-600/10 border border-amber-500/20 text-amber-400 hover:bg-amber-600/20 hover:-translate-y-1 transition-all duration-300 font-semibold text-sm">
+                                <i class="fas fa-code text-lg"></i> LeetCode
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Madhukar. All rights reserved. | Open to Internships & Collaborations</p>
-            <p>Aspiring Software Developer | Full Stack Developer | Tech Enthusiast</p>
+    <footer class="py-8 border-t border-white/5 bg-dark-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="#home" class="text-xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">&lt;Madhukar/&gt;</a>
+            <p class="text-slate-500 text-sm mt-3">&copy; 2025 Madhukar. All rights reserved.</p>
+            <p class="text-slate-600 text-xs mt-1">Open to Internships & Collaborations</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-

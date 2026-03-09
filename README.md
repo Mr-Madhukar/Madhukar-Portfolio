@@ -41,12 +41,11 @@ To become a skilled Software Developer who contributes to innovative, reliable, 
 - ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white)
 - ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-- ![HTML5](https://img.shields.io/badge/HTML5-E34C26?style=flat&logo=html5&logoColor=white)
-- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 
 ### Front-End Development
-- React.js
-- HTML/CSS3
+- HTML5 & CSS3
+- Tailwind CSS
 - Responsive Design
 - JavaScript ES6+
 
@@ -54,27 +53,32 @@ To become a skilled Software Developer who contributes to innovative, reliable, 
 - Node.js
 - Express.js
 - REST APIs
-- MongoDB
+- SQL & MongoDB
 
 ### Core Concepts
 - Data Structures & Algorithms (DSA)
 - Database Management System (DBMS)
 - Operating Systems (OS)
 - Computer Networking
+- Agile Methodologies
 
 ### Tools & Platforms
 - Git & GitHub
-- AWS (Learning)
-- LeetCode
-- HackerRank
-- VS Code
+- AWS
+- Docker
+- Postman
+- Jira
+- Linux
 
 ### Certifications
-- ✅ Gemini Certified
-- ✅ Python Essentials in Python
-- ✅ Java Programming
-- ✅ Smart Bihar Hackathon Participant
-- ✅ Certified in Creating Compelling Reports
+- ✅ Gen AI Academy 2.0 — Google Cloud
+- ✅ Gemini Certified — Google
+- ✅ Cybersecurity Essentials — Cisco
+- ✅ Java Programming — IIT Bombay
+- ✅ Python Essentials — OpenEDG
+- ✅ Smart Bihar Hackathon — IIT Patna
+- ✅ Web Development — CDS
+- ✅ Core Python — HYPEX
 
 ---
 
@@ -90,29 +94,23 @@ To become a skilled Software Developer who contributes to innovative, reliable, 
 
 ## 📚 Featured Projects
 
-### 1. **MERN Stack Web Application**
-   - Full-stack web application using MongoDB, Express, React, and Node.js
-   - Features: User authentication, database management, responsive design
-   - [View Project](#)
-
-### 2. **Go Trip - Travel & Tourism Platform**
+### 1. **Go Trip - Travel & Tourism Platform**
    - Interactive travel and tourism booking platform
-   - Technologies: React, Node.js, MongoDB
-   - [Live Demo](https://mr-madhukar.github.io/Project-Travel-Tourism/gotrip/public/index.html)
+   - Technologies: HTML5, CSS3, JavaScript, PHP, MySQL
+   - 🔗 [Live Demo](https://gotripagil.netlify.app/)
+   - 💻 [Code Repository](https://github.com/Mr-Madhukar/Agil-Project)
 
-### 3. **Responsive Web Design Projects**
-   - Modern, responsive web interfaces using HTML, CSS, JavaScript
-   - Focus on UX and performance optimization
+### 2. **Mintlify Clone**
+   - A modern documentation landing page clone showcasing accurate layout and design elements
+   - Technologies: HTML5, CSS3, JavaScript
+   - 🔗 [Live Demo](https://mintlifyc.netlify.app/)
+   - 💻 [Code Repository](https://github.com/Mr-Madhukar/Mintlify)
 
-### 4. **Data Structures & Algorithms**
-   - Implementations of various data structures in Java and Python
-   - Focus on time and space complexity optimization
-   - [View on GitHub](#)
-
-### 5. **Competitive Programming Solutions**
-   - Active on LeetCode and HackerRank
-   - Solving problems across multiple domains (Arrays, Strings, Trees, Graphs)
-   - [LeetCode Profile](https://leetcode.com)
+### 3. **Cursor Landing Page Clone**
+   - Precise replication of the Cursor AI editor's official landing page, emphasizing advanced CSS, animations, and responsive interactions
+   - Technologies: HTML5, CSS3, JavaScript
+   - 🔗 [Live Demo](https://mr-madhukar.github.io/coursor/)
+   - 💻 [Code Repository](https://github.com/Mr-Madhukar/coursor)
 
 ---
 
@@ -142,14 +140,16 @@ To become a skilled Software Developer who contributes to innovative, reliable, 
 
 ```
 Madhukar-Portfolio/
-├── index.html          # Main HTML file
-├── styles.css          # Styling
-├── script.js           # JavaScript functionality
-├── My.jpg              # Profile picture
-├── First.png           # Portfolio image
-├── Second.png          # Portfolio image
+├── index.html          # Main HTML markup
+├── styles.css          # Core CSS and Tailwind overrides
+├── script.ts           # Typescript functionality
+├── script.js           # Compiled JavaScript
+├── resume.pdf          # Resume document
+├── Prot.png            # Profile picture
+├── Gotrip.png          # Project thumbnail 1
+├── mintilify.png       # Project thumbnail 2
+├── Cursor.png          # Project thumbnail 3
 ├── README.md           # This file
-└── .gitignore          # Git ignore file
 ```
 
 ---
@@ -199,14 +199,13 @@ Then visit `http://localhost:8000`
 
 ### Get In Touch
 - 📧 **Email:** madhukar212005@gmail.com
-- 📱 **Phone:** +91 9473452441
 - 📍 **Location:** Ambala, Haryana, India
 
 ### Connect With Me
 - 🔗 [LinkedIn](https://www.linkedin.com/in/mr-madhukar)
 - 💻 [GitHub](https://github.com/Mr-Madhukar)
-- 🐦 [Twitter](#)
-- 🧮 [LeetCode](#)
+- 🐦 [Twitter](https://x.com/Mr_Madhukar_)
+- 🧮 [LeetCode](https://leetcode.com/u/Mr_Madhukar/)
 
 ---
 
