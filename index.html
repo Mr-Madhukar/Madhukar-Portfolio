@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madhukar-Portfolio</title>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script defer>
       tailwind.config = {
         theme: {
           extend: {
@@ -36,8 +39,12 @@
       }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
 </head>
 <body class="font-inter bg-dark-900 text-white overflow-x-hidden">
 
@@ -117,7 +124,7 @@
                 <div class="order-1 lg:order-2 flex justify-center reveal-el">
                     <div class="relative">
                         <div class="absolute inset-0 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full blur-2xl opacity-30 animate-glow"></div>
-                        <img src="My-.jpg" alt="Madhukar" class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-cyan-400/40 shadow-2xl shadow-cyan-500/20">
+                        <img src="IMG/My-.jpg" alt="Madhukar" class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-cyan-400/40 shadow-2xl shadow-cyan-500/20">
                     </div>
                 </div>
             </div>
@@ -261,7 +268,7 @@
                 <!-- Project 1: Go Trip -->
                 <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-cyan-500/30">
                     <div class="relative overflow-hidden h-48 sm:h-56">
-                        <img src="Gotrip.png" alt="Go Trip - Travel & Tourism" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="IMG/Gotrip.png" alt="Go Trip - Travel & Tourism" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
                             <a href="https://gotripagil.netlify.app/" target="_blank" class="px-4 py-2 bg-cyan-500 rounded-full text-sm font-semibold text-white hover:bg-cyan-600 transition-colors">
                                 <i class="fas fa-external-link-alt mr-1"></i> Live Demo
@@ -284,7 +291,7 @@
                 <!-- Project 2: Mintlify Clone -->
                 <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-purple-500/30">
                     <div class="relative overflow-hidden h-48 sm:h-56">
-                        <img src="mintilify.png" alt="Mintlify Documentation Clone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="IMG/mintilify.png" alt="Mintlify Documentation Clone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
                             <a href="https://mintlifyc.netlify.app/" target="_blank" class="px-4 py-2 bg-purple-500 rounded-full text-sm font-semibold text-white hover:bg-purple-600 transition-colors">
                                 <i class="fas fa-external-link-alt mr-1"></i> Live Demo
@@ -306,7 +313,7 @@
                 <!-- Project 3: Cursor Landing Page -->
                 <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-emerald-500/30">
                     <div class="relative overflow-hidden h-48 sm:h-56">
-                        <img src="Cursor.png" alt="Cursor Landing Page Clone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="IMG/Cursor.png" alt="Cursor Landing Page Clone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
                             <a href="https://mr-madhukar.github.io/coursor/" target="_blank" class="px-4 py-2 bg-emerald-500 rounded-full text-sm font-semibold text-white hover:bg-emerald-600 transition-colors">
                                 <i class="fas fa-external-link-alt mr-1"></i> Live Demo
@@ -319,9 +326,27 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Cursor — Landing Page Clone</h3>
                         <p class="text-slate-400 text-sm mb-4 leading-relaxed">Recreated Cursor IDE landing page with hero, features, pricing, testimonials, FAQ, and footer using pure HTML & CSS.</p>
+                <!-- Project 4: Portfolio Website -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-blue-500/30">
+                    <div class="relative overflow-hidden h-48 sm:h-56">
+                        <img src="IMG/Protfoliyo.png" alt="Personal Portfolio Website" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+                            <a href="mrmadhukar.in" class="px-4 py-2 bg-blue-500 rounded-full text-sm font-semibold text-white hover:bg-blue-600 transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Mr-Madhukar/Madhukar-Portfolio" target="_blank" class="px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-semibold text-white hover:bg-white/20 transition-colors">
+                                <i class="fab fa-github mr-1"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Personal Portfolio — Modern Design</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">Responsive portfolio website built with HTML, CSS, JavaScript, and Tailwind CSS featuring dark/light mode, smooth animations, and modern UI design.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 rounded-md text-xs font-medium">HTML5</span>
-                            <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-300 rounded-md text-xs font-medium">CSS3</span>
+                            <span class="px-2.5 py-1 bg-blue-500/10 text-blue-300 rounded-md text-xs font-medium">HTML5</span>
+                            <span class="px-2.5 py-1 bg-blue-500/10 text-blue-300 rounded-md text-xs font-medium">CSS3</span>
+                            <span class="px-2.5 py-1 bg-blue-500/10 text-blue-300 rounded-md text-xs font-medium">JavaScript</span>
+                            <span class="px-2.5 py-1 bg-blue-500/10 text-blue-300 rounded-md text-xs font-medium">Tailwind</span>
                         </div>
                     </div>
                 </div>
