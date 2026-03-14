@@ -7,12 +7,15 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
-    <!-- Load resources -->
+
+    <!-- Fonts + Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script defer>
-      tailwind.config = {
+
+    <!-- Tailwind (CDN) -->
+    <script>
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
         theme: {
           extend: {
             fontFamily: { inter: ['Inter', 'sans-serif'] },
@@ -40,8 +43,11 @@
         }
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+
+    <!-- Local Styles -->
     <link rel="stylesheet" href="styles.css">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
@@ -364,6 +370,7 @@
                                 <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-sm font-medium border border-blue-500/20">HTML5</span>
                                 <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-sm font-medium border border-blue-500/20">CSS3</span>
                                 <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-sm font-medium border border-blue-500/20">JavaScript</span>
+                                <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-sm font-medium border border-blue-500/20">TypeScript</span>
                                 <span class="px-3 py-1.5 bg-blue-500/10 text-blue-300 rounded-full text-sm font-medium border border-blue-500/20">Tailwind</span>
                             </div>
                         </div>
