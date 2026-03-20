@@ -16,7 +16,6 @@ body { font-family: 'Inter', sans-serif; background-color: #050816; color: white
 img {
     max-width: 100%;
     height: auto;
-    loading: lazy;
 }
 
 /* Reduce motion for users who prefer it */
